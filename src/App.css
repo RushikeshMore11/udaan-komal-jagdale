@@ -1,0 +1,358 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  color: #34495e;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+h3 {
+  color: #e74c3c;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+h4 {
+  color: #7f8c8d;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Progress Bar */
+.progress-bar {
+  background: #ecf0f1;
+  border-radius: 10px;
+  height: 8px;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.progress {
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+/* Question Card */
+.question-card {
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+  border: 2px solid #e9ecef;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.option-btn {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 20px 25px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #2c3e50;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.option-btn:hover {
+  border-color: #3498db;
+  background: #f8f9ff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.15);
+}
+
+.option-btn:active {
+  transform: translateY(0);
+}
+
+.option-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(52, 152, 219, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.option-btn:hover::before {
+  left: 100%;
+}
+
+/* Path Display */
+.path-display {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.path-steps {
+  font-size: 1rem;
+  color: #856404;
+  font-weight: 500;
+}
+
+.path-step {
+  display: inline-block;
+  margin: 5px 0;
+}
+
+/* Result Card */
+.result-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.result-card h2 {
+  color: white;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.result-card h3 {
+  color: #f39c12;
+  font-size: 1.6rem;
+  margin-bottom: 30px;
+}
+
+.path-summary {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 25px;
+  margin: 30px 0;
+  backdrop-filter: blur(10px);
+}
+
+.path-summary h4 {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.path-summary ul {
+  list-style: none;
+  text-align: left;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.path-summary li {
+  background: rgba(255, 255, 255, 0.1);
+  margin: 8px 0;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border-left: 4px solid #f39c12;
+  font-weight: 500;
+}
+
+.restart-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.restart-btn:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+}
+
+/* Contact Information */
+.contact-info {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 25px;
+  margin: 25px 0;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-info h4 {
+  color: #f39c12;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.contact-details {
+  text-align: left;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-details p {
+  margin: 12px 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.contact-details strong {
+  color: #f39c12;
+  font-weight: 600;
+}
+
+.contact-details a {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+/* Love Text */
+.love-text {
+  text-align: center;
+  margin-top: 30px;
+  padding: 20px 0;
+}
+
+.love-text p {
+  color: #e74c3c;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.love-text:hover p {
+  opacity: 1;
+}
+
+/* Love text in result card */
+.result-card .love-text p {
+  color: #f39c12;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    margin: 10px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .option-btn {
+    padding: 15px 20px;
+    font-size: 1rem;
+  }
+
+  .result-card {
+    padding: 30px 20px;
+  }
+
+  .result-card h2 {
+    font-size: 1.8rem;
+  }
+
+  .result-card h3 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .question-card {
+    padding: 20px;
+  }
+
+  .option-btn {
+    padding: 12px 15px;
+    font-size: 0.95rem;
+  }
+}
