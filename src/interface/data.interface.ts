@@ -1,3 +1,12 @@
+export interface Reference {
+  name: string;
+  title?: string;
+  youtube?: string;
+  linkedin?: string;
+  description?: string;
+  organization?: string;
+}
+
 interface Question {
   id: string;
   text: string;
@@ -14,6 +23,7 @@ interface Question {
       phone: string;
       organization: string;
     };
+    references?: Reference[];
   }[];
 }
 

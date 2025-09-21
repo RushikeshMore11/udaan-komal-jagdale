@@ -74,6 +74,54 @@ const App = () => {
               </div>
             )}
 
+            {result?.references && result.references.length > 0 && (
+              <div className="references-info">
+                <h4>Recommended Learning Resources</h4>
+                <div className="references-list">
+                  {result.references.map((ref, index) => (
+                    <div key={index} className="reference-item">
+                      <h5>{ref.name}</h5>
+                      {ref.title && (
+                        <p className="reference-title">{ref.title}</p>
+                      )}
+                      {ref.description && (
+                        <p className="reference-description">
+                          {ref.description}
+                        </p>
+                      )}
+                      {ref.organization && (
+                        <p className="reference-org">
+                          <strong>Organization:</strong> {ref.organization}
+                        </p>
+                      )}
+                      <div className="reference-links">
+                        {ref.youtube && (
+                          <a
+                            href={ref.youtube}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="reference-link youtube"
+                          >
+                            📺 YouTube Channel
+                          </a>
+                        )}
+                        {ref.linkedin && (
+                          <a
+                            href={ref.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="reference-link linkedin"
+                          >
+                            💼 LinkedIn Profile
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <div className="path-summary">
               <h4>{UI_TEXT.JOURNEY_TITLE}</h4>
               <ul>

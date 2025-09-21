@@ -301,6 +301,122 @@ h4 {
   font-weight: 600;
 }
 
+/* References Section */
+.references-info {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 25px;
+  margin: 25px 0;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.references-info h4 {
+  color: #f39c12;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.references-list {
+  display: grid;
+  gap: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.reference-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.reference-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.reference-item h5 {
+  color: #f39c12;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.reference-title {
+  color: #ecf0f1;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.reference-description {
+  color: #bdc3c7;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.reference-org {
+  color: #95a5a6;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.reference-org strong {
+  color: #f39c12;
+}
+
+.reference-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.reference-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.reference-link.youtube {
+  background: rgba(255, 0, 0, 0.1);
+  color: #ff6b6b;
+  border-color: rgba(255, 107, 107, 0.3);
+}
+
+.reference-link.youtube:hover {
+  background: rgba(255, 0, 0, 0.2);
+  color: #ff5252;
+  transform: translateY(-1px);
+}
+
+.reference-link.linkedin {
+  background: rgba(0, 119, 181, 0.1);
+  color: #74b9ff;
+  border-color: rgba(116, 185, 255, 0.3);
+}
+
+.reference-link.linkedin:hover {
+  background: rgba(0, 119, 181, 0.2);
+  color: #0984e3;
+  transform: translateY(-1px);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .container {
@@ -332,6 +448,23 @@ h4 {
   .result-card h3 {
     font-size: 1.4rem;
   }
+
+  .references-list {
+    gap: 15px;
+  }
+
+  .reference-item {
+    padding: 15px;
+  }
+
+  .reference-links {
+    gap: 10px;
+  }
+
+  .reference-link {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -354,5 +487,34 @@ h4 {
   .option-btn {
     padding: 12px 15px;
     font-size: 0.95rem;
+  }
+
+  .references-list {
+    gap: 12px;
+  }
+
+  .reference-item {
+    padding: 12px;
+  }
+
+  .reference-item h5 {
+    font-size: 1.1rem;
+  }
+
+  .reference-title {
+    font-size: 0.9rem;
+  }
+
+  .reference-description {
+    font-size: 0.85rem;
+  }
+
+  .reference-links {
+    gap: 8px;
+  }
+
+  .reference-link {
+    padding: 5px 10px;
+    font-size: 0.8rem;
   }
 }
